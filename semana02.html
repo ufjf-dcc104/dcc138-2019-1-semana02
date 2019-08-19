@@ -14,9 +14,17 @@
         canvas.height = 300;
         var ctx = canvas.getContext("2d");
 
-        ctx.font = "bold 10px Arial";
-        ctx.fillStyle = "darkgrey"
-        ctx.fillText("hello world!", 10, 10);
+        ctx.fillStyle = "tan";
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 1;
+        ctx.fillRect(0,0, 120, 24);
+        ctx.strokeRect(0,0, 120, 24);
+
+        ctx.font = "bold 20px monospaced";
+        ctx.fillStyle = "white"
+        ctx.fillText("hello world!", 10, 20);
+
+    
     </script>
 </body>
 </html>
