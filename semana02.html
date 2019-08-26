@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semana 02 Exemplo 01</title>
 </head>
+
 <body>
     <h1>Semana 02 Exemplo 01</h1>
     <canvas />
@@ -14,20 +16,31 @@
         canvas.height = 300;
         var ctx = canvas.getContext("2d");
 
-        ctx.fillStyle = "tan";
-        ctx.fillRect(0,0, canvas.width, canvas.height);
+        function limpaTela() {
+            ctx.fillStyle = "tan";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
 
-        ctx.fillStyle = "tan";
-        ctx.strokeStyle = "black";
-        ctx.lineWidth = 1;
-        ctx.fillRect(0,0, 120, 24);
-        ctx.strokeRect(0,0, 120, 24);
+        function desenhaRetangulo(x, y, l, a, cor) {
+            ctx.fillStyle = cor;
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 1;
+            ctx.fillRect(x, y, l, a);
+            ctx.strokeRect(x, y, l, a);
+        }
 
-        ctx.font = "bold 20px monospaced";
-        ctx.fillStyle = "white"
-        ctx.fillText("hello world!", 10, 20);
+        function escreveTexto(x, y, texto, cor) {
+            ctx.font = "bold 20px monospaced";
+            ctx.fillStyle = cor;
+            ctx.fillText(texto, x, y);
+        }
 
-    
+        limpaTela();
+        desenhaRetangulo(0, 0, 120, 24, "tan");
+        escreveTexto(10, 20, "hello world", "white");
+
+
     </script>
 </body>
+
 </html>
