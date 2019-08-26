@@ -40,16 +40,42 @@
             limpaTela();
             desenhaRetangulo(0, 0, 120, 24, "tan");
             escreveTexto(10, 20, "hello world", "white");
-            pcx = pcx +5*dt;
+            pcx = pcx + pcvx*dt;
+            pcy = pcy + pcvy*dt;
             desenhaRetangulo(pcx, pcy, pcw, pcw, "blue");
             requestAnimationFrame(passo);
             anterior = t;
         }
+
+        addEventListener("keydown", function (e) {
+            switch (e.keyCode) {
+                case 37:
+                    pcvx = -160;
+                    break;
+                case 39:
+                    pcvx = +160;
+                    break;
+            }
+        });
+        addEventListener("keyup", function (e) {
+            switch (e.keyCode) {
+                case 37:
+                    pcvx = 0;
+                    break;
+                case 39:
+                    pcvx = 0;
+                    break;
+            }
+        });
+
+
         var dt, anterior = 0;
         var pcx = 30;
         var pcy = 50;
         var pcw = 20;
         var pcc = "blue";
+        var pcvx = 0;
+        var pcvy = 0;   
         requestAnimationFrame(passo);
 
     </script>
