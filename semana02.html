@@ -55,6 +55,12 @@
                 case 39:
                     pcvx = +160;
                     break;
+                case 38:
+                    pcvy = -160;
+                    break;
+                case 40:
+                    pcvy = +160;
+                    break;
             }
         });
         addEventListener("keyup", function (e) {
@@ -64,6 +70,12 @@
                     break;
                 case 39:
                     pcvx = 0;
+                    break;
+                case 38:
+                    pcvy = 0;
+                    break;
+                case 40:
+                    pcvy = 0;
                     break;
             }
         });
